@@ -5,6 +5,11 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "components/Layout";
 import Container from "components/Container";
+import Typography from "@material-ui/core/Typography";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const ComponentPage = () => {
   return (
@@ -12,14 +17,21 @@ const ComponentPage = () => {
       <Helmet>
         <title>Components</title>
       </Helmet>
-      <Container type="content" className="text-center">
-        <h1>Components</h1>
+      <Container type="content">
+        <Typography variant="h1">Components</Typography>
         <p>Welcome to component page</p>
         <Grid container spacing={2}>
+          <Grid item xs={12}></Grid>
           <Grid item xs={12}>
-            <ButtonSection />
+            <Section title="Buttons">
+              <Buttons />
+            </Section>
           </Grid>
-          <Grid item xs={6}></Grid>
+          <Grid item xs={12}>
+            <Section title="Typographies">
+              <Typographies />
+            </Section>
+          </Grid>
         </Grid>
       </Container>
     </Layout>
@@ -34,7 +46,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ButtonSection = () => {
+const Section = ({ title, children }) => (
+  <ExpansionPanel>
+    <ExpansionPanelSummary
+      expandIcon={<ExpandMoreIcon />}
+      aria-controls="panel1a-content"
+      id="panel1a-header"
+    >
+      <Typography variant="h2">{title}</Typography>
+    </ExpansionPanelSummary>
+    <ExpansionPanelDetails>{children}</ExpansionPanelDetails>
+  </ExpansionPanel>
+);
+
+const Buttons = () => {
   const classes = useStyles();
 
   return (
@@ -56,4 +81,19 @@ const ButtonSection = () => {
   );
 };
 
+const Typographies = () => (
+  <>
+    <Grid container>
+      {[
+        { variant: "h1", text: "h1.Day. Quicksand-60-Regular " },
+        { variant: "h2", text: "h2. Montserrat-35-Regular" },
+        { variant: "h3", text: "h3. Nunito-35-Regular " },
+      ].map(({ variant, text }) => (
+        <Grid item xs={12}>
+          <Typography variant={variant}>{text}</Typography>
+        </Grid>
+      ))}
+    </Grid>
+  </>
+);
 export default ComponentPage;
