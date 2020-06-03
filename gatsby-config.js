@@ -1,8 +1,9 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-resolve-src',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-material-ui",
+    "gatsby-plugin-resolve-src",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -10,6 +11,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    'gatsby-plugin-react-leaflet',
+    "gatsby-plugin-react-leaflet",
   ],
 };
