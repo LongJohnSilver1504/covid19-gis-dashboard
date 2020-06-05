@@ -2,7 +2,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { orange } from "@material-ui/core/colors";
 const palette = {
   primary: {
-    main: "#F3EBFA",
+    main: "#033b75",
   },
   secondary: {
     lighter: "#F3EBFA",
@@ -88,16 +88,30 @@ const typography = {
   },
   button: {
     fontFamily: "nunito",
-    fontWeight: 500,
-    fontSize: 14,
+    fontWeight: 600,
+    fontSize: 16,
     lineHeight: 1.25,
     color: "#707070",
+  },
+};
+
+const MuiButton = {
+  root: {
+    padding: "18px 36px",
+    borderRadius: 40,
+  },
+  outlined: {
+    padding: "18px 36px",
+    borderRadius: 40,
   },
 };
 
 const theme = createMuiTheme({
   palette,
   typography,
+  overrides: {
+    MuiButton,
+  },
 });
 
 export default theme;

@@ -21,7 +21,6 @@ const ComponentPage = () => {
         <Typography variant="h1">Components</Typography>
         <p>Welcome to component page</p>
         <Grid container spacing={2}>
-          <Grid item xs={12}></Grid>
           <Grid item xs={12}>
             <Section title="Buttons">
               <Buttons />
@@ -63,21 +62,51 @@ const Buttons = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Button variant="contained">Default</Button>
-      <Button variant="contained" color="primary">
-        Primary
-      </Button>
-      <Button variant="contained" color="secondary">
-        Secondary
-      </Button>
-      <Button variant="contained" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" color="primary" href="#contained-buttons">
-        Link
-      </Button>
-    </div>
+    <Grid container>
+      <Grid item xs={12}>
+        <div className={classes.root}>
+          <Button variant="contained">Default</Button>
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="contained" disabled>
+            Disabled
+          </Button>
+          <Button variant="contained" color="primary" href="#contained-buttons">
+            Link
+          </Button>
+        </div>
+      </Grid>
+      <Grid item xs={12}>
+        <div className={classes.root}>
+          <Button variant="outlined" color="primary">
+            Primary
+          </Button>
+          <Button variant="outlined" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="outlined" disabled>
+            Disabled
+          </Button>
+          <Button variant="outlined" color="primary" href="#contained-buttons">
+            Link
+          </Button>
+        </div>
+      </Grid>
+      <Grid item xs={12}>
+        <div className={classes.root}>
+          <Button color="primary">Primary</Button>
+          <Button color="secondary">Secondary</Button>
+          <Button disabled>Disabled</Button>
+          <Button color="primary" href="#contained-buttons">
+            Link
+          </Button>
+        </div>
+      </Grid>
+    </Grid>
   );
 };
 
@@ -92,7 +121,7 @@ const Typographies = () => (
         { variant: "subtitle2", text: "Subtitle2 Quicksand-16-Medium " },
         { variant: "body1", text: "Body1. Quicksand-30-Medium " },
         { variant: "body2", text: "Body2 Quicksand-14-Medium " },
-        { variant: "button", text: "Body2 Nunito-14-regular " },
+        { variant: "button", text: "Button Nunito-16-regular " },
       ].map(({ variant, text }) => (
         <Grid item xs={12}>
           <Typography variant={variant}>{text}</Typography>
