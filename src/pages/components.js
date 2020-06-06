@@ -115,13 +115,16 @@ const Typographies = () => (
     <Grid container>
       {[
         { variant: "h1", text: "h1.Day. Quicksand-60 " },
-        { variant: "h2", text: "h2. Nunito-35-Regular" },
-        { variant: "h3", text: "h3. Nunito-20-Regular " },
-        { variant: "subtitle1", text: "Subtitle1 Nunito 18-Regular " },
+        {
+          variant: "h2",
+          text: "h2.  Montserat-35-Regular",
+        },
+        { variant: "h3", text: "h3. Montserat-20-Regular " },
+        { variant: "subtitle1", text: "Subtitle1 Montserat 18-Regular " },
         { variant: "subtitle2", text: "Subtitle2 Quicksand-16-Medium " },
         { variant: "body1", text: "Body1. Quicksand-30-Medium " },
         { variant: "body2", text: "Body2 Quicksand-14-Medium " },
-        { variant: "button", text: "Button Nunito-16-regular " },
+        { variant: "button", text: "Button Montserat-16-regular " },
       ].map(({ variant, text }) => (
         <Grid item xs={12}>
           <Typography variant={variant}>{text}</Typography>

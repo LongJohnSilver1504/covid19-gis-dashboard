@@ -45,21 +45,21 @@ const typography = {
     color: "#707070 ",
   },
   h2: {
-    fontFamily: "nunito",
+    fontFamily: "Montserrat",
     fontWeight: 400,
     fontSize: 35,
     lineHeight: 1.2,
     color: "#707070",
   },
   h3: {
-    fontFamily: "nunito",
+    fontFamily: "Montserrat",
     fontWeight: 400,
     fontSize: 20,
     lineHeight: 1.2,
     color: "#707070",
   },
   subtitle1: {
-    fontFamily: "nunito",
+    fontFamily: "Montserrat",
     fontWeight: 400,
     fontSize: 18,
     lineHeight: 1.17,
@@ -87,7 +87,7 @@ const typography = {
     color: "#707070",
   },
   button: {
-    fontFamily: "nunito",
+    fontFamily: "Montserrat",
     fontWeight: 600,
     fontSize: 16,
     lineHeight: 1.25,
