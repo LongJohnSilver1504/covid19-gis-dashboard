@@ -8,7 +8,6 @@ import SideBar from "./SideBar";
 
 const useStyles = makeStyles({
   container: {
-    margin: 20,
     height: 600,
   },
   content: {
