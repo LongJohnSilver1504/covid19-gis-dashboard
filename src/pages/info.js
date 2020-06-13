@@ -5,9 +5,9 @@ import Container from "components/Container";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import { storageContext } from "../components/global/Provider";
-import { getAllAccumulatedCases, getLatestCases } from "../global/selectors";
+import { getAllAccumulatedCases } from "../global/selectors";
 
-const GisPage = () => {
+const InfoPage = () => {
   const { cases } = useContext(storageContext);
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -52,4 +52,4 @@ const GisPage = () => {
   );
 };
 
-export default GisPage;
+export default InfoPage;
