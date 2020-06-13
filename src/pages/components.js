@@ -125,6 +125,7 @@ const Typographies = () => (
         { variant: "body1", text: "Body1. Quicksand-30-Medium " },
         { variant: "body2", text: "Body2 Quicksand-14-Medium " },
         { variant: "button", text: "Button Montserat-16-regular " },
+        { variant: "caption", text: "caption Quicksand-12-Medium " },
       ].map(({ variant, text }) => (
         <Grid key={variant} item xs={12}>
           <Typography variant={variant}>{text}</Typography>
