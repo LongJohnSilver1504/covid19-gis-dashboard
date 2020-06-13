@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Card, Grid, Typography, Divider } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
 import { storageContext } from "../../global/Provider";
 import {
   getAllAccumulatedCases,
@@ -34,33 +35,39 @@ const DailySection = () => {
     }
   }, [cases]);
 
-  return <DailyResume info={info} />;
+  return <DailyResume info={info} skeletonItems={sections} />;
 };
 
-const DailyResume = ({ info = [] }) => (
+const DailyResume = ({ info = [], skeletonItems = [] }) => (
   <Card>
     <Grid container spacing={2} direction="row" justify="space-between">
-      {info.map(({ title, quantity, delta, isPositive }, i) => (
-        <>
-          <Grid xs={5} md={4} lg={2} xl={2} key={title} item>
-            <ResumeItem
-              title={title}
-              quantity={quantity}
-              delta={delta}
-              isPositive={isPositive}
-            />
-          </Grid>
-          {i !== info.length - 1 && (
-            <Grid item>
-              <Divider
-                style={{ border: "1px solid #f9f9f9 ", height: "100%" }}
-                orientation="vertical"
-                flexItem
-              />
+      {info.length === 0
+        ? skeletonItems.map((title) => (
+            <Grid xs={5} md={4} lg={2} xl={2} key={title} item>
+              <ResumeItemSkeleton />
             </Grid>
-          )}
-        </>
-      ))}
+          ))
+        : info.map(({ title, quantity, delta, isPositive }, i) => (
+            <>
+              <Grid xs={5} md={4} lg={2} xl={2} key={title} item>
+                <ResumeItem
+                  title={title}
+                  quantity={quantity}
+                  delta={delta}
+                  isPositive={isPositive}
+                />
+              </Grid>
+              {i !== info.length - 1 && (
+                <Grid item>
+                  <Divider
+                    style={{ border: "1px solid #f9f9f9 ", height: "100%" }}
+                    orientation="vertical"
+                    flexItem
+                  />
+                </Grid>
+              )}
+            </>
+          ))}
     </Grid>
   </Card>
 );
@@ -97,5 +104,13 @@ const ResumeItem = ({ title, quantity, delta, isPositive }) => {
     </Grid>
   );
 };
+
+const ResumeItemSkeleton = () => (
+  <div style={{ height: 74 }}>
+    <Skeleton height={16} variant="text" />
+    <Skeleton width={75} height={30} variant="text" />
+    <Skeleton width={20} height={14} variant="text" />
+  </div>
+);
 
 export default DailySection;
