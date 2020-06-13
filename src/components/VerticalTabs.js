@@ -7,7 +7,7 @@ import PublicIcon from "@material-ui/icons/Public";
 import PieChartIcon from "@material-ui/icons/PieChart";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import CodeIcon from "@material-ui/icons/Code";
-
+import InfoIcon from "@material-ui/icons/Info";
 const useTabStyles = makeStyles({
   root: {
     minWidth: 115,
@@ -33,21 +33,18 @@ const VerticalTabs = () => {
         indicatorColor="primary"
       >
         <Tab
-          indicatorColor="primary"
           href="/"
           classes={tabClasses}
           component={Link}
           icon={<DashboardIcon style={{ fontSize: 32 }} />}
         />
         <Tab
-          indicatorColor="primary"
           href="/gis"
           classes={tabClasses}
           component={Link}
           icon={<PublicIcon style={{ fontSize: 32 }} />}
         />
         <Tab
-          indicatorColor="primary"
           href="/charts"
           classes={tabClasses}
           component={Link}
@@ -59,9 +56,14 @@ const VerticalTabs = () => {
           component={Link}
           icon={<CodeIcon style={{ fontSize: 32 }} />}
         />
+        <Tab
+          href="/info"
+          classes={tabClasses}
+          component={Link}
+          icon={<InfoIcon style={{ fontSize: 32 }} />}
+        />
       </Tabs>
     </div>
   );
 };
-
 export default VerticalTabs;

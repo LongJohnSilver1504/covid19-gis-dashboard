@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 const GisPage = () => {
   return (
-    <Layout pageName="Gid">
+    <Layout pageName="Gis">
       <Helmet>
         <title>Gis</title>
       </Helmet>
